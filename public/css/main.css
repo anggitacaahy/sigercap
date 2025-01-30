@@ -1,0 +1,656 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 2rem;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --main-color: #5f160c;
+  --second-color: #ffffff;
+  --third-color: #ca3305;
+  --four-color:#381414;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--main-color);
+  box-shadow: 0 4px 41px rgb(14 55 54 / 70%);
+  padding: 15px 10%;
+  transition: 0.2s;
+}
+
+body,
+html {
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 2rem;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  color: var(--second-color); 
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+.navbar-custom {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar-custom li {
+  margin-right: 10px;
+}
+
+.navbar-custom li a {
+  text-decoration: none;
+  color: var(--second-color);
+  padding: 11px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.navbar-custom li a:hover {
+  color: var(--four-color);
+}
+
+/* Dropdown Styles */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  color: #ffffff;
+}
+.dropdown{
+  color:#fff
+}
+
+.slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slides.active {
+  opacity: 1;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: var(--text-color);
+  background: var(--overlay-color);
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  z-index: 10;
+  outline: none;
+}
+
+.slider-nav.prev {
+  left: 20px;
+}
+
+.slider-nav.next {
+  right: 20px;
+}
+
+.home-text {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-text h1 {
+      font-size: 2rem;
+  }
+
+  .home-text h2 {
+      font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+  .dropdown{
+    color: var(--second-color);
+  }
+  .navbar-custom {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--main-color);
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(88, 4, 4, 0.2);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .navbar-custom.active {
+    max-height: 100vh; 
+    overflow: auto;
+    box-shadow: 0px 2px 10px rgba(88, 4, 4, 0.3); 
+  }
+
+  .navbar-custom li {
+    width: 100%;
+  }
+
+  .navbar-custom li a {
+    padding: 10px 20px;
+    display: block; 
+    transition: background-color 0.3s ease; 
+    }
+
+  .navbar-custom li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+  }
+
+  .navbar-custom .dropdown-content {
+    display: block; 
+    width: 100%; 
+    opacity: 0; 
+    transition: opacity 0.3s ease, max-height 0.3s ease; 
+    max-height: 0; 
+    overflow: hidden; 
+  }
+
+  .navbar-custom .dropdown.active .dropdown-content {
+    opacity: 1; 
+    max-height: 300px; 
+    overflow: auto; 
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.home-text {
+  flex: 1 1 17rem;
+  position: relative; /* Pastikan konten berada di atas pseudo-elemen */
+  z-index: 2; /* Pastikan konten berada di atas pseudo-elemen */
+  margin-top: 150px; /* Atur margin atas sesuai kebutuhan */
+}
+
+.home-text h1 {
+  font-size: 3.2rem;
+  color: var(--second-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+  z-index: 2;
+  font-family: ui-sans-serif;
+}
+
+.home-text h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--second-color);
+  text-transform: uppercase;
+  margin: 0.5rem 0 1.4rem;
+  margin-bottom: 30px;
+  z-index: 2;
+}
+
+.btn {
+  padding: 7px 7px;
+  color: var(--second-color); 
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  border: 2px solid var(--second-color);
+}
+
+.btn:hover {
+  color: #fff;
+  font-size: 15px;
+  background: var(--main-color);
+}
+
+.background {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color:var(--main-color);
+  opacity: 0.9;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+
+.backgrounds {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: transparent;
+  opacity: 0.9;
+  padding: 2rem;
+}
+.backgrounds::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2a2f36; /* Warna biru dengan transparansi 50% */
+  z-index: -1; /* Pastikan lapisan ini berada di atas gambar latar belakang */
+  opacity: 0.6;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  z-index: 1; /* Ensure content is above the background */
+}
+
+.mapid {
+  width: 100%;
+  height: 943px;
+  margin-top: 70px;
+}
+
+.containerlapor {
+  max-width: 600px;
+  margin: 20px auto 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.input-group {
+  display: flex;
+  gap: 10px; /* Jarak antara input */
+  color: black;
+}
+
+.input-item {
+  flex: 1; /* Membuat item input dalam flexbox memiliki lebar yang sama */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group .btn {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.button-group .btn:last-child {
+  margin-right: 0;
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--main-color);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: var(--main-color);
+}
+
+.btn-small {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--main-color);
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mitigasi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.card {
+  background-color: var(--second-color);
+  border: 2px solid var(--main-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  flex: 1 1 400vw; /* Lebar card menyesuaikan 25% dari lebar viewport */
+  max-width: 400px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px 12px 0 0;
+}
+
+.card h2 {
+  color: var(--main-color);
+  margin-top: 1rem;
+}
+
+.card p {
+  color: var(--main-color);
+}
+
+/* CSS untuk Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: block; /* Keep it block to apply transitions */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-10px); /* Position it slightly above */
+  position: absolute;
+  background-color: var(--main-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(224, 211, 211, 0.2);
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Dropdown item styles */
+.dropdown-content a {
+  color: var(--main-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show dropdown on hover with smooth transition */
+.dropdown:hover .dropdown-content {
+  opacity: 1; /* Make visible */
+  transform: translateY(0); /* Move to normal position */
+}
+
+.table-responsive {
+  max-width: 100%; /* Pastikan container tidak melebihi lebar viewport */
+  table-layout: fixed;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Menyediakan scrolling yang lebih halus pada perangkat sentuh */
+}
+
+        /* CSS untuk mapid dan legend */
+        .mapid {
+          width: 100%;
+          height: 95vh; /* Tinggi peta disesuaikan dengan tinggi viewport */
+          margin-top: 70px; /* Margin atas agar tidak bertabrakan dengan navbar */
+      }
+      .legend {
+          background: rgba(255, 255, 255, 0.8); /* Background legenda dengan opacity */
+          line-height: 1.5em;
+          padding: 10px;
+          font: 14px Arial, Helvetica, sans-serif;
+          border: 2px solid #ccc;
+          border-radius: 4px;
+          position: fixed; /* Tetap di posisi saat di-scroll */
+          bottom: 20px;
+          right: 20px;
+          z-index: 1000; /* Layer tertinggi */
+          color: #000; /* Warna teks legenda */
+      }
+      .legend i {
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          margin-right: 8px;
+          opacity: 0.6;
+          border: 1px solid #ccc;
+          vertical-align: middle;
+      }
+      .legend span {
+          vertical-align: middle;
+      }
+
+      .checkbox-container, .show-checkbox-btn, .current-location-btn, .legend {
+          position: absolute;
+          z-index: 1000;
+      }
+      .checkbox-container {
+          position: absolute;
+          top: 80px; /* Sesuaikan dengan margin atas peta */
+          right: 20px; /* Pindahkan ke kanan */
+          background: rgba(255, 255, 255, 0.6);
+          padding: 10px;
+          border: 2px solid #ccc;
+          border-radius: 4px;
+          z-index: 1000;
+          display: none; /* Awalnya sembunyikan */
+          display: flex;
+          flex-direction: column;
+          color: var(--main-color);
+      }
+      .show-checkbox-btn {
+          position: absolute;
+          top: 80px; /* Sesuaikan dengan margin atas peta */
+          right: 20px;
+          background: var(--main-color); /* Warna tombol sesuai dengan warna utama */
+          color: var(--second-color); /* Warna teks ikon sesuai dengan warna kedua */
+          border: none;
+          border-radius: 4px;
+          padding: 10px;
+          cursor: pointer;
+          z-index: 1000;
+          font-size: 24px; /* Ukuran ikon */
+      }
+      .show-checkbox-btn.open {
+          background: var(--main-color); /* Warna saat tombol dalam keadaan terbuka */
+      }
+      .checkbox-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          color: var(--main-color);
+          border-bottom: 1px solid #ccc;
+      }
+      .checkbox-header i {
+          font-size: 24px;
+          margin-right: 10px;
+          cursor: pointer;
+          color: var(--main-color); /* Warna ikon sesuai dengan warna utama */
+      }
+      .checkbox-header h4{
+          margin: 0;
+          font-size: 18px;
+          color: darkred;
+      }
+      .current-location-btn {
+          top: 150px;
+          right: 20px;
+          background: var(--main-color);
+          color: var(--second-color);
+          border: none;
+          border-radius: 4px;
+          padding: 10px;
+          cursor: pointer;
+          font-size: 24px;
+      }
+
+      .gradient-bar {
+          height: 10px;
+          width: 100%;
+          background: linear-gradient(to right, #38A800, #FFFF00, #ff0000); /* Hijau ke Kuning ke Merah */
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          position: relative;
+      }
+      .gradient-bar::before,
+      .gradient-bar::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          height: 8px;
+          width: 1px;
+          background-color: black; /* Warna garis pembatas */
+          z-index: 1;
+      }
+
+      .gradient-bar::before {
+          left: 33%; /* Posisi batas antara hijau dan kuning */
+      }
+
+      .gradient-bar::after {
+          left: 66%; /* Posisi batas antara kuning dan merah */
+      }
+
+      /* Container for gradient bar and labels */
+      .legend-container {
+          position: relative;
+          width: 100%;
+      }
+
+      /* Flexbox untuk mendistribusikan teks secara merata */
+      .legend-labels {
+          display: flex;
+          justify-content: space-between; /* Ruang antara masing-masing item */
+          margin-top: 5px;
+          font-size: 10px; /* Ukuran font */
+          position: absolute;
+          width: 100%;
+          top: 100%;
+          left: 0;
+      }
+
+      .legend-labels txt {
+          text-align: center; /* Mengatur teks agar berada di tengah-tengah masing-masing ruang */
+          flex: 1; /* Membuat setiap span mengambil ruang yang sama */
+          font-size: small;
+      }
+      .kecamatan-label {
+        font-size: 10px; /* Ukuran teks */
+        font-weight: bold; /* Tebal teks */
+        color: #000; /* Warna teks hitam */
+        text-align: center;
+        white-space: nowrap; /* Agar teks tidak terpotong */
+        background: none; /* Pastikan tidak ada background */
+        border: none; /* Hilangkan border */
+        padding: 0; /* Hilangkan padding */
+    }
+    
+    .leaflet-tooltip.kecamatan-label {
+        background: transparent; /* Hilangkan background default */
+        border: none; /* Hilangkan border default */
+        box-shadow: none; /* Hilangkan bayangan */
+        padding: 0; /* Hilangkan padding */
+        color: #300909;
+    }
+
+    .desa-label {
+      font-size: 12px;
+      color: darkred;
+      white-space: nowrap;
+  }
+    

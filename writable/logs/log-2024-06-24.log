@@ -1,0 +1,1110 @@
+INFO - 2024-06-24 09:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 09:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-24 09:59:26 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^ in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\xampp\htdocs\sigercap\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\xampp\htdocs\sigercap\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\sigercap\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\sigercap\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, false)
+#8 C:\xampp\htdocs\sigercap\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#9 C:\xampp\htdocs\sigercap\app\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save(Array)
+#10 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#11 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sigercap\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\sigercap\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\sigercap\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\xampp\htdocs\sigercap\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2024-06-24 09:59:26 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 09:59:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$/VVndQXJPDotOtuHn7mCw.em5b1RiK6XiZLeInU84ILT/6vzSBM4O\', \'2024-06-24 09:59:26\', \'2024-06-24 09:59:26\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$/VVndQXJPDotOtuHn7mCw.em5b1RiK6XiZLeInU84ILT/6vzSBM4O\', \'2024-06-24 09:59:26\', \'2024-06-24 09:59:26\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 09:59:26 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^', 'C:\\xampp\\htdocs\\sigercap\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$/VVndQXJPDotOtuHn7mCw.em5b1RiK6XiZLeInU84ILT/6vzSBM4O\', \'2024-06-24 09:59:26\', \'2024-06-24 09:59:26\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$/VVndQXJPDotOtuHn7mCw.em5b1RiK6XiZLeInU84ILT/6vzSBM4O\', \'2024-06-24 09:59:26\', \'2024-06-24 09:59:26\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$/VVndQXJPDotOtuHn7mCw.em5b1RiK6XiZLeInU84ILT/6vzSBM4O\', \'2024-06-24 09:59:26\', \'2024-06-24 09:59:26\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 6 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 9 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+10 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+INFO - 2024-06-24 09:59:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-24 10:00:01 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^ in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\xampp\htdocs\sigercap\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\xampp\htdocs\sigercap\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\sigercap\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\sigercap\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, false)
+#8 C:\xampp\htdocs\sigercap\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#9 C:\xampp\htdocs\sigercap\app\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save(Array)
+#10 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#11 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sigercap\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\sigercap\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\sigercap\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\xampp\htdocs\sigercap\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2024-06-24 10:00:01 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 10:00:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$2AXEhZP/R96BAYmAqtvpBOK3///4PHGX3BNbLVEDfFJZwe0PrzpPW\', \'2024-06-24 10:00:01\', \'2024-06-24 10:00:01\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$2AXEhZP/R96BAYmAqtvpBOK3///4PHGX3BNbLVEDfFJZwe0PrzpPW\', \'2024-06-24 10:00:01\', \'2024-06-24 10:00:01\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 10:00:01 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^', 'C:\\xampp\\htdocs\\sigercap\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$2AXEhZP/R96BAYmAqtvpBOK3///4PHGX3BNbLVEDfFJZwe0PrzpPW\', \'2024-06-24 10:00:01\', \'2024-06-24 10:00:01\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$2AXEhZP/R96BAYmAqtvpBOK3///4PHGX3BNbLVEDfFJZwe0PrzpPW\', \'2024-06-24 10:00:01\', \'2024-06-24 10:00:01\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$2AXEhZP/R96BAYmAqtvpBOK3///4PHGX3BNbLVEDfFJZwe0PrzpPW\', \'2024-06-24 10:00:01\', \'2024-06-24 10:00:01\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 6 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 9 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+10 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+ERROR - 2024-06-24 10:17:49 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^ in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\xampp\htdocs\sigercap\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\xampp\htdocs\sigercap\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\sigercap\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\sigercap\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, false)
+#8 C:\xampp\htdocs\sigercap\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#9 C:\xampp\htdocs\sigercap\app\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save(Array)
+#10 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#11 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sigercap\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\sigercap\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\sigercap\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\xampp\htdocs\sigercap\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2024-06-24 10:17:49 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 10:17:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$cQOEwf5TqS.yD3ogPaStlukuPAayGhexN8mA6Z4YCT6Zt1TDQi9LC\', \'2024-06-24 10:17:49\', \'2024-06-24 10:17:49\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$cQOEwf5TqS.yD3ogPaStlukuPAayGhexN8mA6Z4YCT6Zt1TDQi9LC\', \'2024-06-24 10:17:49\', \'2024-06-24 10:17:49\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 10:17:49 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^', 'C:\\xampp\\htdocs\\sigercap\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$cQOEwf5TqS.yD3ogPaStlukuPAayGhexN8mA6Z4YCT6Zt1TDQi9LC\', \'2024-06-24 10:17:49\', \'2024-06-24 10:17:49\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$cQOEwf5TqS.yD3ogPaStlukuPAayGhexN8mA6Z4YCT6Zt1TDQi9LC\', \'2024-06-24 10:17:49\', \'2024-06-24 10:17:49\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$cQOEwf5TqS.yD3ogPaStlukuPAayGhexN8mA6Z4YCT6Zt1TDQi9LC\', \'2024-06-24 10:17:49\', \'2024-06-24 10:17:49\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 6 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 9 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+10 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+ERROR - 2024-06-24 10:18:28 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^ in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\xampp\htdocs\sigercap\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\xampp\htdocs\sigercap\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\sigercap\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\sigercap\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, false)
+#8 C:\xampp\htdocs\sigercap\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#9 C:\xampp\htdocs\sigercap\app\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save(Array)
+#10 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#11 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sigercap\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\sigercap\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\sigercap\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\xampp\htdocs\sigercap\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2024-06-24 10:18:28 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 10:18:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$eXECQx0964Dn2yzM6ss5XuYFnglgSjJdREWrH.3SR/hHSQt4R3Xra\', \'2024-06-24 10:18:28\', \'2024-06-24 10:18:28\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$eXECQx0964Dn2yzM6ss5XuYFnglgSjJdREWrH.3SR/hHSQt4R3Xra\', \'2024-06-24 10:18:28\', \'2024-06-24 10:18:28\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 10:18:28 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^', 'C:\\xampp\\htdocs\\sigercap\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$eXECQx0964Dn2yzM6ss5XuYFnglgSjJdREWrH.3SR/hHSQt4R3Xra\', \'2024-06-24 10:18:28\', \'2024-06-24 10:18:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$eXECQx0964Dn2yzM6ss5XuYFnglgSjJdREWrH.3SR/hHSQt4R3Xra\', \'2024-06-24 10:18:28\', \'2024-06-24 10:18:28\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$eXECQx0964Dn2yzM6ss5XuYFnglgSjJdREWrH.3SR/hHSQt4R3Xra\', \'2024-06-24 10:18:28\', \'2024-06-24 10:18:28\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 6 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 9 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+10 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+ERROR - 2024-06-24 10:18:45 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^ in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\xampp\htdocs\sigercap\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\xampp\htdocs\sigercap\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\sigercap\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\sigercap\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, false)
+#8 C:\xampp\htdocs\sigercap\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#9 C:\xampp\htdocs\sigercap\app\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save(Array)
+#10 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#11 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#12 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sigercap\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\sigercap\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\sigercap\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\xampp\htdocs\sigercap\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2024-06-24 10:18:45 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 10:18:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$seVr9o0ez4Odr1ghLQ/6Au2kWgD5Kb8uZPwoRJgVFPFV/MEfXo.9G\', \'2024-06-24 10:18:45\', \'2024-06-24 10:18:45\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$seVr9o0ez4Odr1ghLQ/6Au2kWgD5Kb8uZPwoRJgVFPFV/MEfXo.9G\', \'2024-06-24 10:18:45\', \'2024-06-24 10:18:45\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 10:18:45 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;users&quot; does not exist
+LINE 1: ...&quot; (&quot;username&quot;, &quot;email&quot;, &quot;password&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^', 'C:\\xampp\\htdocs\\sigercap\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$seVr9o0ez4Odr1ghLQ/6Au2kWgD5Kb8uZPwoRJgVFPFV/MEfXo.9G\', \'2024-06-24 10:18:45\', \'2024-06-24 10:18:45\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$seVr9o0ez4Odr1ghLQ/6Au2kWgD5Kb8uZPwoRJgVFPFV/MEfXo.9G\', \'2024-06-24 10:18:45\', \'2024-06-24 10:18:45\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$seVr9o0ez4Odr1ghLQ/6Au2kWgD5Kb8uZPwoRJgVFPFV/MEfXo.9G\', \'2024-06-24 10:18:45\', \'2024-06-24 10:18:45\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 6 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 9 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+10 APPPATH\Controllers\AuthController.php(23): CodeIgniter\BaseModel->save([...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+ERROR - 2024-06-24 10:22:58 --> ErrorException: pg_query(): Query failed: ERROR:  type modifier is not allowed for type "integer"
+LINE 2:  "id" SERIAL(5) NOT NULL,
+              ^ in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CREATE TABLE "u...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CREATE TABLE "u...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE "u...')
+#4 C:\xampp\htdocs\sigercap\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE "u...')
+#5 C:\xampp\htdocs\sigercap\app\Database\Migrations\2024-06-24-102147_CreateUsersTable.php(41): CodeIgniter\Database\Forge->createTable('users')
+#6 C:\xampp\htdocs\sigercap\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateUsersTable->up()
+#7 C:\xampp\htdocs\sigercap\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#8 C:\xampp\htdocs\sigercap\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#9 C:\xampp\htdocs\sigercap\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\xampp\htdocs\sigercap\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\xampp\htdocs\sigercap\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#12 C:\xampp\htdocs\sigercap\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\xampp\htdocs\sigercap\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2024-06-24 10:25:05 --> ErrorException: pg_query(): Query failed: ERROR:  type modifier is not allowed for type "integer"
+LINE 2:  "id" SERIAL(5) NOT NULL,
+              ^ in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CREATE TABLE "u...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CREATE TABLE "u...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE "u...')
+#4 C:\xampp\htdocs\sigercap\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE "u...')
+#5 C:\xampp\htdocs\sigercap\app\Database\Migrations\2024-06-24-102147_CreateUsersTable.php(41): CodeIgniter\Database\Forge->createTable('users')
+#6 C:\xampp\htdocs\sigercap\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateUsersTable->up()
+#7 C:\xampp\htdocs\sigercap\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#8 C:\xampp\htdocs\sigercap\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#9 C:\xampp\htdocs\sigercap\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\xampp\htdocs\sigercap\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\xampp\htdocs\sigercap\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#12 C:\xampp\htdocs\sigercap\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\xampp\htdocs\sigercap\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2024-06-24 10:28:03 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type timestamp: "CURRENT_TIMESTAMP"
+LINE 6:  "created_at" TIMESTAMP DEFAULT 'CURRENT_TIMESTAMP' NOT NULL...
+                                        ^ in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CREATE TABLE "u...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CREATE TABLE "u...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE "u...')
+#4 C:\xampp\htdocs\sigercap\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE "u...')
+#5 C:\xampp\htdocs\sigercap\app\Database\Migrations\2024-06-24-102147_CreateUsersTable.php(40): CodeIgniter\Database\Forge->createTable('users')
+#6 C:\xampp\htdocs\sigercap\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateUsersTable->up()
+#7 C:\xampp\htdocs\sigercap\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#8 C:\xampp\htdocs\sigercap\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#9 C:\xampp\htdocs\sigercap\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\xampp\htdocs\sigercap\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\xampp\htdocs\sigercap\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#12 C:\xampp\htdocs\sigercap\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\xampp\htdocs\sigercap\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2024-06-24 10:29:35 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type timestamp: "CURRENT_TIMESTAMP"
+LINE 6:  "created_at" TIMESTAMP DEFAULT 'CURRENT_TIMESTAMP' NOT NULL...
+                                        ^ in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CREATE TABLE "u...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CREATE TABLE "u...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE "u...')
+#4 C:\xampp\htdocs\sigercap\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE "u...')
+#5 C:\xampp\htdocs\sigercap\app\Database\Migrations\2024-06-24-102147_CreateUsersTable.php(40): CodeIgniter\Database\Forge->createTable('users')
+#6 C:\xampp\htdocs\sigercap\system\Database\MigrationRunner.php(867): App\Database\Migrations\CreateUsersTable->up()
+#7 C:\xampp\htdocs\sigercap\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#8 C:\xampp\htdocs\sigercap\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#9 C:\xampp\htdocs\sigercap\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\xampp\htdocs\sigercap\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\xampp\htdocs\sigercap\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#12 C:\xampp\htdocs\sigercap\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\xampp\htdocs\sigercap\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+INFO - 2024-06-24 10:39:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 10:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 10:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 10:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 10:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 10:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 10:43:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 11:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 11:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:05:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:05:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:12:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:13:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:13:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:14:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:26:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:27:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:30:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:31:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:39:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:47:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 14:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 15:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 15:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 15:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 15:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 15:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 15:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-24 16:22:52 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 9.
+ 1 APPPATH\Views\v_profile.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 9)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:22:54 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 9.
+ 1 APPPATH\Views\v_profile.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 9)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:28:50 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 9.
+ 1 APPPATH\Views\v_profile.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 9)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:28:51 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 9.
+ 1 APPPATH\Views\v_profile.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 9)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:28:52 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 9.
+ 1 APPPATH\Views\v_profile.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 9)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:29:09 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+ERROR - 2024-06-24 16:29:34 --> ErrorException: pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;users_email_key&quot;
+DETAIL:  Key (email)=(anggitacahyaningtyass@gmail.com) already exists. in C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\sigercap\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\xampp\htdocs\sigercap\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\xampp\htdocs\sigercap\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\xampp\htdocs\sigercap\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\xampp\htdocs\sigercap\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#7 C:\xampp\htdocs\sigercap\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, false)
+#8 C:\xampp\htdocs\sigercap\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#9 C:\xampp\htdocs\sigercap\app\Controllers\Objek.php(22): CodeIgniter\BaseModel->save(Array)
+#10 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(933): App\Controllers\Objek->store()
+#11 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Objek))
+#12 C:\xampp\htdocs\sigercap\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sigercap\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\sigercap\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\sigercap\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\xampp\htdocs\sigercap\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2024-06-24 16:29:34 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;users_email_key&quot;
+DETAIL:  Key (email)=(anggitacahyaningtyass@gmail.com) already exists.
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Objek.php(22): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Objek->store()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Objek))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:29:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;users_email_key&quot;
+DETAIL:  Key (email)=(anggitacahyaningtyass@gmail.com) already exists.
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$w0bsqBwk9UIfBX/VyatUk.6ITgQuOtf.pG8qkehVHP7tUbIR2HOeu\', \'2024-06-24 16:29:34\', \'2024-06-24 16:29:34\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$w0bsqBwk9UIfBX/VyatUk.6ITgQuOtf.pG8qkehVHP7tUbIR2HOeu\', \'2024-06-24 16:29:34\', \'2024-06-24 16:29:34\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Objek.php(22): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Objek->store()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Objek))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:29:34 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;users_email_key&quot;
+DETAIL:  Key (email)=(anggitacahyaningtyass@gmail.com) already exists.
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;users_email_key&quot;
+DETAIL:  Key (email)=(anggitacahyaningtyass@gmail.com) already exists.', 'C:\\xampp\\htdocs\\sigercap\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$w0bsqBwk9UIfBX/VyatUk.6ITgQuOtf.pG8qkehVHP7tUbIR2HOeu\', \'2024-06-24 16:29:34\', \'2024-06-24 16:29:34\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$w0bsqBwk9UIfBX/VyatUk.6ITgQuOtf.pG8qkehVHP7tUbIR2HOeu\', \'2024-06-24 16:29:34\', \'2024-06-24 16:29:34\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (\'anggita\', \'anggitacahyaningtyass@gmail.com\', \'$2y$10$w0bsqBwk9UIfBX/VyatUk.6ITgQuOtf.pG8qkehVHP7tUbIR2HOeu\', \'2024-06-24 16:29:34\', \'2024-06-24 16:29:34\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (:username:, :email:, :password:, :created_at:, :updated_at:)', [...], false)
+ 6 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], false)
+ 9 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+10 APPPATH\Controllers\Objek.php(22): CodeIgniter\BaseModel->save([...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Objek->store()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Objek))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+INFO - 2024-06-24 16:29:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 16:29:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-24 16:29:50 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:50:40 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:50:48 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:53:04 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: login]
+in APPPATH\Controllers\Objek.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-24 16:53:05 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: login]
+in APPPATH\Controllers\Objek.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-24 16:53:14 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: login]
+in APPPATH\Controllers\Objek.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-06-24 16:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 16:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 16:54:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 16:55:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 16:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-24 16:56:03 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+INFO - 2024-06-24 16:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-24 16:56:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-24 16:56:26 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 16:57:01 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:00:18 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:00:20 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:00:21 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:00:21 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:00:22 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:00:22 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:00:23 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:03:59 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:03:59 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:04:00 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:04:00 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:04:19 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:05:09 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:05:10 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:05:10 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:05:10 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
+CRITICAL - 2024-06-24 17:05:11 --> ErrorException: Undefined variable $userData
+[Method: GET, Route: profile]
+in APPPATH\Views\v_profile.php on line 7.
+ 1 APPPATH\Views\v_profile.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $userData', 'C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sigercap\\app\\Views\\v_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('v_profile.php', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('v_profile.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\sigercap\\public\\index.php')
